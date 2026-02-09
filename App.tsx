@@ -56,7 +56,9 @@ const App: React.FC = () => {
    */
   const calculateWeight = (exercise: Exercise): number => {
     // 1. Flatten all logs and filter by exercise NAME (handling clones/swaps)
-    const allLogs = Object.values(history).flat().filter(log => {
+    // Explicitly type to ensure TS knows it's WorkoutLog[]
+    const historyValues: WorkoutLog[][] = Object.values(history);
+    const allLogs = historyValues.flat().filter(log => {
       const logExercise = exercises.find(e => e.id === log.exerciseId);
       return logExercise?.name === exercise.name;
     });
