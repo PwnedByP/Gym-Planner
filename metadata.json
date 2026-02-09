@@ -1,0 +1,5 @@
+{
+  "name": "Gym Planner",
+  "description": "A static, logic-based gym companion focusing on machine-only exercises.",
+  "requestFramePermissions": []
+}
